@@ -45,6 +45,9 @@ sources:
 
       - name: countryregion
         description: regiao do pais
+
+      - name: businessentitycontact
+        description: entidade comercial
       
 
       

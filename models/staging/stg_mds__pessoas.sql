@@ -2,7 +2,7 @@ with
     source_pessoas as (
         select
              
-            cast(businessentityid as INTEGER) as id_pessoa
+            cast(businessentityid as INTEGER) as id_entidade
             , cast(persontype as STRING) as tipo_pessoa
             , cast(firstname as STRING) as primeiro_nome
             , cast(middlename as STRING) as nome_meio
