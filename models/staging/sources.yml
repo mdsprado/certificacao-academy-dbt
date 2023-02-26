@@ -1,0 +1,54 @@
+version: 2
+
+sources:
+  - name: mds
+    description: Banco replica da adventure works
+    schema: sap_adw
+    tables:
+      - name: salesorderheader
+        description: Uma linha por pedido de venda.
+        columns:
+        - name: salesorderid
+          description: e a chave primaria da tabela salesorderheader
+          tests:
+          - unique
+          - not_null
+          
+
+      - name: product
+        description: Produtos.
+
+      - name: salesorderdetail
+        description: Detalhe de pedidos
+
+      - name: creditcard
+        description: Cartão de credito.
+
+      - name: salesreason
+        description: Motivo de venda.
+
+      - name: salesorderheadersalesreason
+        description: cabecalho do Motivo de venda.
+      
+      - name: customer
+        description: Cliente
+
+      - name: person
+        description: Pessoa
+
+      - name: address
+        description: endereco.
+
+
+      - name: stateprovince
+        description: provincia do estado.
+
+      - name: countryregion
+        description: regiao do pais
+
+      - name: businessentitycontact
+        description: entidade comercial
+      
+
+      
+      
