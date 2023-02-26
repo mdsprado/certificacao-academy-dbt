@@ -4,8 +4,8 @@ with
             cast(creditcardid as INTEGER) as id_cartao
             , cast(cardtype as STRING) as tipo_cartao
             , cast(cardnumber as INTEGER) as numero_cartao
-            --, expmonth
-            --, expyear
+            , cast(expmonth as INTEGER) as mes_expiracao_cartao
+            , cast(expyear as INTEGER) as ano_expiracao_cartao
             --, modifieddate
                             
         from {{ source ('mds','creditcard')}} -- a macro source esta pegando no banco

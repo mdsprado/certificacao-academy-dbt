@@ -1,9 +1,9 @@
 with 
     source_regiao_pais as (
         select
-            cast(countryregioncode	as STRING) as codigo_regiao_pais
-            , cast(name	as STRING) as nome_regiao_pais
-            --, cast(modifieddate	as STRING) as 
+            cast(countryregioncode as STRING) as codigo_regiao_pais
+            , cast(name as STRING) as nome_regiao_pais
+            --, modifieddate
             
         from {{ source ('mds','countryregion')}} -- a macro source esta pegando no banco
     )
