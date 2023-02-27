@@ -27,10 +27,10 @@ with
         , id_cliente
         , id_cartao
         , id_endereco
-        --, id_motivo_venda
-        --, id_produto
+        , id_motivo_venda
+        , id_produto
 
-    from {{ ref('int_pedidos_itens')}}
+    from {{ ref('int_pedidos_itens_endereco')}}
 )
 , joined as (
     select
@@ -44,9 +44,9 @@ with
         
         
     from pedidos_item
-    inner join clientes on pedidos_item.id_cliente = clientes.id_cliente
-    inner join cartoes_credito on pedidos_item.id_cartao = cartoes_credito.id_cartao
-    inner join enderecos on pedidos_item.id_endereco = enderecos.id_endereco
+    left join clientes on pedidos_item.id_cliente = clientes.id_cliente
+    left join cartoes_credito on pedidos_item.id_cartao = cartoes_credito.id_cartao
+    left join enderecos on pedidos_item.id_endereco = enderecos.id_endereco
     --inner join motivos_venda on pedidos_item.id_motivo_venda = motivos_venda.id_motivo_venda
     --inner join produtos on pedidos_item.id_produto = produtos.id_produto
 )
