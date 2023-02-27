@@ -1,22 +1,23 @@
 with 
     cartoes_credito as (
-        select *
+        select pk_cartao
+            , id_cartao
         from {{ ref('dim_cartoes_credito')}}
 )
 , clientes as (
-        select *
+        select pk_cliente, id_cliente
         from {{ ref('dim_clientes')}}
 )
 , enderecos as (
-        select *
+        select id_endereco, pk_endereco
         from {{ ref('dim_enderecos')}}
 )
 , motivos_venda as (
-        select *
+        select id_motivo_venda, pk_motivo_venda
         from {{ ref('dim_motivos_venda')}}
 )
 , produtos as (
-        select *
+        select id_produto,pk_produto
         from {{ ref('dim_produtos')}}
 )
 , pedidos_item as (

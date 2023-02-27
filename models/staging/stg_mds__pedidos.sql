@@ -9,7 +9,7 @@ with
             , cast(shiptoaddressid as INTEGER) as id_endereco_envio
             , cast(shipmethodid as INTEGER) as id_metodo_envio
             , cast(creditcardid as INTEGER) as id_cartao
-            , cast(orderdate as STRING) as data_pedido
+            , date(cast(orderdate as datetime)) as data_pedido
             , cast(status as INTEGER) as status_pedido
             , cast(purchaseordernumber as STRING) as numero_ordem_compra
             , cast(accountnumber as STRING) as numero_conta
