@@ -4,9 +4,8 @@ with
              
             cast(businessentityid as INTEGER) as id_entidade
             , cast(persontype as STRING) as tipo_pessoa
-            , cast(firstname as STRING) as primeiro_nome
-            , cast(middlename as STRING) as nome_meio
-            , cast(lastname as STRING) as ultimo_nome
+            , cast((firstname || ' ' || lastname) as STRING) as nome_completo
+            --, middlename 
             --, namestyle
             --, title
             --, suffix

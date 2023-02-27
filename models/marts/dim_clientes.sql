@@ -33,9 +33,7 @@
         , juncao_tabelas1.id_territorio
         , pessoas.id_entidade
         , pessoas.tipo_pessoa
-        , pessoas.primeiro_nome
-        , pessoas.nome_meio
-        , pessoas.ultimo_nome
+        , pessoas.nome_completo
     from juncao_tabelas1
     left join pessoas on juncao_tabelas1.id_entidade = pessoas.id_entidade
 )
