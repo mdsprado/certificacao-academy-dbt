@@ -1,41 +1,50 @@
 with 
     pedidos_item as (
-    select id_pedido
-        , quantidade_pedido
-        , preco_unitario
-        , desconto_preco_unitario
-        , subtotal_pedido
-        , frete_pedido
-        , data_pedido
-        , status_pedido
+    select *
     from {{ ref('int_pedidos_itens')}}
 )
-, ids_dim as (
-    select *
-    from {{ ref('int_ids_dim')}}
+, clientes as (
+    select pk_cliente, id_cliente
+    from {{ ref('dim_clientes')}}
+)
+, enderecos as (
+    select pk_endereco, id_territorio
+       from {{ ref('dim_enderecos')}}
+)
+, cartoes as (
+    select pk_cartao, id_cartao
+    from {{ ref('dim_cartoes_credito')}}
+)
+
+, produtos as (
+    select pk_produto, id_produto
+    from {{ ref('dim_produtos')}}
+)
+, motivos_venda as (
+    select pk_motivo_venda, id_pedido
+    from {{ ref('dim_motivos_venda')}}
 )
 
 , joined as (
     select
         pedidos_item.id_pedido
-        , ids_dim.pk_cartao
-        , ids_dim.pk_produto
-        , ids_dim.pk_cliente
-        , ids_dim.pk_endereco
-        , ids_dim.pk_motivo_venda
+        , cartoes.pk_cartao
+        , produtos.pk_produto
+        , clientes.pk_cliente
+        --, enderecos.pk_endereco
+        , motivos_venda.pk_motivo_venda
+        , pedidos_item.id_territorio
         , pedidos_item.quantidade_pedido
         , pedidos_item.preco_unitario
         , pedidos_item.desconto_preco_unitario
-        , pedidos_item.subtotal_pedido
-        , pedidos_item.frete_pedido
         , pedidos_item.data_pedido
         , pedidos_item.status_pedido
     from pedidos_item
-    left join ids_dim on pedidos_item.id_pedido = ids_dim.id_pedido
-    --left join cartoes_credito on pedidos_item.id_cartao = cartoes_credito.id_cartao
-    --left join enderecos on pedidos_item.id_endereco = enderecos.id_endereco
-    --left join motivos_venda on pedidos_item.id_motivo_venda = motivos_venda.id_motivo_venda
-    --left join produtos on pedidos_item.id_produto = produtos.id_produto
+    left join clientes on pedidos_item.id_cliente = clientes.id_cliente
+    left join cartoes on pedidos_item.id_cartao = cartoes.id_cartao
+    --left join enderecos on pedidos_item.id_territorio = enderecos.id_territorio
+    left join motivos_venda on pedidos_item.id_pedido = motivos_venda.id_pedido
+    left join produtos on pedidos_item.id_produto = produtos.id_produto
 )
 
 , transformacoes as (
