@@ -1,20 +1,17 @@
 version: 2
 
 models:
-  - name: dim_produtos
-    description: Dimensão com informação de produtos.
+  - name: dim_enderecos
+    description: Dimensão com informação de enderecos.
     columns:
-      - name: pk_produto
-        description: É a primary key da dimensão de produtos.
+      - name: pk_endereco
+        description: É a primary key da dimensão de enderecos.
         tests:
           - unique
           - not_null
 
       - name: id_produto
         description: Chave primaia da tabela de product.
-        tests:
-          - unique
-          - not_null
       - name: nome_produto
       - name: cor_produto
       - name: custo_padrao_produto
