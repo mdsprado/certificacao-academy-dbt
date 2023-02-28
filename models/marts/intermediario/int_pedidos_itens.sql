@@ -7,6 +7,7 @@ with
         , id_cartao
         , data_pedido
         , status_pedido
+        , id_endereco_combranca
         from {{ ref('stg_mds__pedidos')}}
     )
 , pedidos_detalhes as (
@@ -40,6 +41,7 @@ with
         , pedidos_detalhes.preco_unitario
         , pedidos_detalhes.desconto_preco_unitario
         , pedidos.data_pedido
+        , pedidos.id_endereco_combranca
 
         , pedidos.status_pedido
     from pedidos

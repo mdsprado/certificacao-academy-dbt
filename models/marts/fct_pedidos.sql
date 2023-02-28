@@ -8,7 +8,7 @@ with
     from {{ ref('dim_clientes')}}
 )
 , enderecos as (
-    select pk_endereco, id_territorio
+    select pk_endereco, id_endereco
        from {{ ref('dim_enderecos')}}
 )
 , cartoes as (
@@ -31,7 +31,7 @@ with
         , cartoes.pk_cartao
         , produtos.pk_produto
         , clientes.pk_cliente
-        --, enderecos.pk_endereco
+        , enderecos.pk_endereco
         , motivos_venda.pk_motivo_venda
         , pedidos_item.id_territorio
         , pedidos_item.quantidade_pedido
@@ -39,10 +39,11 @@ with
         , pedidos_item.desconto_preco_unitario
         , pedidos_item.data_pedido
         , pedidos_item.status_pedido
+        --, pedidos_item.id_endereco_combranca
     from pedidos_item
     left join clientes on pedidos_item.id_cliente = clientes.id_cliente
     left join cartoes on pedidos_item.id_cartao = cartoes.id_cartao
-    --left join enderecos on pedidos_item.id_territorio = enderecos.id_territorio
+    left join enderecos on pedidos_item.id_endereco_combranca = enderecos.id_endereco
     left join motivos_venda on pedidos_item.id_pedido = motivos_venda.id_pedido
     left join produtos on pedidos_item.id_produto = produtos.id_produto
 )
