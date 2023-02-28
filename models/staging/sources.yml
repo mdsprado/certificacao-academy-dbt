@@ -48,6 +48,9 @@ sources:
 
       - name: businessentitycontact
         description: entidade comercial
+
+      - name: store
+        description: loja
       
 
       
