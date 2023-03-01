@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fct_pedidos
+    materialized: table
+    description: Tabela fato.
+    columns:
+      - name: pk_pedido
+        description: É a primary key da tabela fato.
+        tests:
+          - unique
+          - not_null
+
+        
+      - name: id_pedido
+        description: identificação do pedido
+      - name: pk_cartao
+        description: Primary key da dimensão cartoes_credito
+      - name: pk_produto
+        description: Primary key da dimensão produtos
+      - name: pk_cliente
+        description: Primary key da dimensão clientes
+      - name: pk_endereco
+        description: Primary key da dimensão enderecos
+      - name: pk_motivo_venda
+        description: Primary key da dimensão motivos_venda
+      - name: id_territorio
+      - name: quantidade_pedido
+        description: Quantidade do pedido, teste de soma
+       
+      - name: preco_unitario
+      - name: desconto_preco_unitario
+      - name: data_pedido
+      - name: status_pedido

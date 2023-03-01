@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_enderecos
-    description: Dimensão com informação de enderecos.
+    description: Dimensão com informação de enderecos, as colunas foram renomeadas com nomes intuitivos para cada finalidade.
     columns:
       - name: pk_endereco
         description: É a primary key da dimensão de enderecos.
@@ -10,15 +10,18 @@ models:
           - unique
           - not_null
 
-      - name: id_produto
-        description: Chave primaia da tabela de product.
-      - name: nome_produto
-      - name: cor_produto
-      - name: custo_padrao_produto
-      - name: tamanho_produto
-      - name: peso_produto
-      - name: classe_produto
-      - name: unidade_peso_produto
-        description: unidade de medida da chave peso_produto
-      - name: unidade_tamanho_produto
-        description: unidade de medida da chave tamanho_produto
+      - name: id_endereco
+        description: chave primeira da tabela origem address.
+      - name: id_territorio
+
+      - name: cidade
+
+      - name: cep_endereco
+
+      - name: codigo_estado_provincia
+
+      - name: codigo_regiao_pais
+
+      - name: nome_estado_provincia
+
+      - name: nome_regiao_pais

@@ -50,7 +50,7 @@ with
 
 , transformacoes as (
     select
-         id_pedido || '-' || pk_produto as pk_pedido
+        row_number() over (order by id_pedido) as pk_pedido
         , *
     from joined
 

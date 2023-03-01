@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: Dimensão com informação de clientes.
+    columns:
+      - name: pk_cliente
+        description: É a primary key da dimensão de clientes, as colunas foram renomeadas com nomes intuitivos para cada finalidade.
+        tests:
+          - unique
+          - not_null
+
+      - name: id_entidade
+      - name: id_cliente
+      - name: id_pessoa
+      - name: id_loja
+      - name: id_territorio
+      - name: tipo_pessoa
+      - name: nome_completo
+      - name: nome_loja

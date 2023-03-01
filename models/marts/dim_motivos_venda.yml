@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_motivos_venda
+    description: Dimensão com informação de motivo_venda, as colunas foram renomeadas com nomes intuitivos para cada finalidade.
+    columns:
+      - name: pk_motivo_venda
+        description: É a primary key da dimensão de motivo_venda.
+        tests:
+          - unique
+          - not_null
+
+
+      - name: id_pedido
+        description: identificação da tabela salesorder = pedidos
+
+      - name: nome_motivo_venda
+     
+
+      - name: tipo_motivo_venda
+      

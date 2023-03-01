@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_produtos
-    description: Dimensão com informação de produtos.
+    description: Dimensão com informação de produtos, as colunas foram renomeadas com nomes intuitivos para cada finalidade.
     columns:
       - name: pk_produto
         description: É a primary key da dimensão de produtos.
