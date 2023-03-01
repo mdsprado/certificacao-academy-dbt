@@ -33,15 +33,12 @@ with
 , juncao_tabelas2 as (
     select
         juncao_tabelas1.id_endereco
-        , juncao_tabelas1.id_estado_provincia
-        , juncao_tabelas1.linha1_endereco
-        , juncao_tabelas1.linha2_endereco
+        , juncao_tabelas1.id_territorio
         , juncao_tabelas1.cidade
         , juncao_tabelas1.cep_endereco
         , juncao_tabelas1.codigo_estado_provincia
         , juncao_tabelas1.codigo_regiao_pais
         , juncao_tabelas1.nome_estado_provincia
-        , juncao_tabelas1.id_territorio
         , paises.nome_regiao_pais
     from
     juncao_tabelas1

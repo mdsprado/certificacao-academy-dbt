@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_cartoes_credito
+    description: Dimensão com informação de cartões de crédito, as colunas foram renomeadas com nomes intuitivos para cada finalidade.
+    columns:
+      - name: pk_cartao
+        description: É a primary key da dimensão de cartoes.
+        tests:
+          - unique
+          - not_null
+
+      - name: id_cartao
+        description: primary key ta tabela creditcard
+        tests:
+          - unique
+          - not_null
+      - name: tipo_cartao
+      - name: numero_cartao
+      - name: mes_expiracao_cartao
+      - name: ano_expiracao_cartao

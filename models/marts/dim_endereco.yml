@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_enderecos
+    description: Dimensão com informação de enderecos, as colunas foram renomeadas com nomes intuitivos para cada finalidade.
+    columns:
+      - name: pk_endereco
+        description: É a primary key da dimensão de enderecos.
+        tests:
+          - unique
+          - not_null
+
+      - name: id_endereco
+        description: chave primeira da tabela origem address.
+      - name: id_territorio
+
+      - name: cidade
+
+      - name: cep_endereco
+
+      - name: codigo_estado_provincia
+
+      - name: codigo_regiao_pais
+
+      - name: nome_estado_provincia
+
+      - name: nome_regiao_pais

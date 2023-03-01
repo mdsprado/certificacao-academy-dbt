@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_produtos
-    description: Dimensão com informação de produtos.
+    description: Dimensão com informação de produtos, as colunas foram renomeadas com nomes intuitivos para cada finalidade.
     columns:
       - name: pk_produto
         description: É a primary key da dimensão de produtos.
@@ -11,20 +11,17 @@ models:
           - not_null
 
       - name: id_produto
-        description: Não documentado ainda - fazer
+        description: Chave primaia da tabela de product.
+        tests:
+          - unique
+          - not_null
       - name: nome_produto
-        description: Não documentado ainda - fazer
       - name: cor_produto
-        description: Não documentado ainda - fazer
       - name: custo_padrao_produto
-        description: Não documentado ainda - fazer
       - name: tamanho_produto
-        description: Não documentado ainda - fazer
       - name: peso_produto
-        description: Não documentado ainda - fazer
       - name: classe_produto
-        description: Não documentado ainda - fazer
       - name: unidade_peso_produto
-        description: Não documentado ainda - fazer
+        description: unidade de medida da chave peso_produto
       - name: unidade_tamanho_produto
-        description: Não documentado ainda - fazer
+        description: unidade de medida da chave tamanho_produto

@@ -31,23 +31,26 @@ sources:
         description: cabecalho do Motivo de venda.
       
       - name: customer
-        description: Cliente
+        description: taela de Cliente
 
       - name: person
-        description: Pessoa
+        description: taela de Pessoa
 
       - name: address
-        description: endereco.
+        description: taela de endereco.
 
 
       - name: stateprovince
-        description: provincia do estado.
+        description: taela de provincia do estado.
 
       - name: countryregion
-        description: regiao do pais
+        description: taela de regiao do pais
 
       - name: businessentitycontact
-        description: entidade comercial
+        description: taela de entidade comercial
+
+      - name: store
+        description: dados da loja
       
 
       
