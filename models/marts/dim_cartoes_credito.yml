@@ -16,6 +16,10 @@ models:
           - unique
           - not_null
       - name: tipo_cartao
+        description: O tipo de de cartão
       - name: numero_cartao
+        description: nome do cartao de crédito
       - name: mes_expiracao_cartao
+        description: mes de expiracao do cartao de crédito
       - name: ano_expiracao_cartao
+        description: ano de expiração do cartao de credito

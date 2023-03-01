@@ -15,7 +15,9 @@ models:
         description: identificação da tabela salesorder = pedidos
 
       - name: nome_motivo_venda
+        description: nome do motivo da venda
      
 
       - name: tipo_motivo_venda
+        description: tipo do motivo da venda
       

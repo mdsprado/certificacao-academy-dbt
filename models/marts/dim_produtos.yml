@@ -11,16 +11,22 @@ models:
           - not_null
 
       - name: id_produto
-        description: Chave primaia da tabela de product.
+        description: Chave natural da tabela de product.
         tests:
           - unique
           - not_null
       - name: nome_produto
+        description: o nome do produto
       - name: cor_produto
+        description: cor do produto, nem todos à tem
       - name: custo_padrao_produto
+        description: custo padrão do produto
       - name: tamanho_produto
+        description: tamanho do produto em números 
       - name: peso_produto
+        description: peso do produto em números
       - name: classe_produto
+        description: a classe que o produto pertence
       - name: unidade_peso_produto
         description: unidade de medida da chave peso_produto
       - name: unidade_tamanho_produto
