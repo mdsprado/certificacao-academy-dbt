@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_clientes
-    description: Dimensão com informação de clientes.
+    description: Dimensão com informação de clientes. Foram utilizadas as tabelas de clientes, pessoas, entidades e lojas para compo-la
     columns:
       - name: pk_cliente
         description: É a primary key da dimensão de clientes, as colunas foram renomeadas com nomes intuitivos para cada finalidade.
@@ -11,10 +11,18 @@ models:
           - not_null
 
       - name: id_entidade
+        description: identificação da entidade e chave natural da tabela address
       - name: id_cliente
+        description: chave natural da tabela cliente
       - name: id_pessoa
+        description: chave encontrada nas tabelas entidade e clientes
       - name: id_loja
+        description: identificacao da loja encontrada nas tabelas entidades e clientes
       - name: id_territorio
+        description: chave primaria da tabela entidade e também está na tabela pessoas
       - name: tipo_pessoa
+        description: o tipo da tabela pessoas
       - name: nome_completo
+        description: nome completo da pessoa
       - name: nome_loja
+        description: nome da loja

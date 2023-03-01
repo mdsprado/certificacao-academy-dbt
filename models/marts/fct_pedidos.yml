@@ -3,7 +3,7 @@ version: 2
 models:
   - name: fct_pedidos
     materialized: table
-    description: Tabela fato.
+    description: Tabela fato, está relacionada com todas as tabelas dimensões.
     columns:
       - name: pk_pedido
         description: É a primary key da tabela fato.
@@ -29,6 +29,10 @@ models:
         description: Quantidade do pedido, teste de soma
        
       - name: preco_unitario
+        description: preco por unidade
       - name: desconto_preco_unitario
+        description: valor do desconto
       - name: data_pedido
+        description: data do pedido
       - name: status_pedido
+        description: status que está o pedido
